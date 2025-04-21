@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uspješno Plaćanje</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#FFFBF1] text-gray-800 font-baloo">
+
+    <section class="content px-4 py-10">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Uspješno Plaćanje!</h2>
+            <p class="text-xl mb-6">Vaša narudžba je uspješno plaćena. Hvala što ste kupovali kod nas!</p>
+            <div class="mt-6">
+                <a href="index.html" class="bg-[#FFB84D] text-white px-6 py-3 rounded-lg hover:bg-[#FF9A29]">Vrati se na početnu stranicu</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.onload = function() {
+            let kosarica = JSON.parse(localStorage.getItem('kosarica')) || [];
+            let userData = JSON.parse(localStorage.getItem('userData')) || [];
+            let orderDetailsDiv = document.getElementById('order-details');
+            let totalPrice = 0;
+        }
+
+    </script>
+
+</body>
+</html>

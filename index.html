@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <title>Glovo | Naruci odmah!</title>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            baloo: ["Baloo 2", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-[#FFEBE1] text-gray-800 font-baloo">
+  <!-- Navbar -->
+  <nav class="bg-[#FFB84D] p-4 flex justify-between items-center">
+    <a href="index.html" class="text-3xl font-bold text-white">The<span class="text-red-500">Glovo</span></a>
+    <button id="menu-btn" class="text-3xl md:hidden text-white"><i class="ri-menu-3-line"></i></button>
+    <ul id="nav-links" class="hidden md:flex space-x-6 text-white font-bold">
+      <li><a href="index.html#home" class="hover:text-red-500">Home</a></li>
+      <li class="relative group" id="menu-container">
+        <a href="meni.html" class="hover:text-red-500">Meni</a>
+      </li>
+      <li><a href="index.html#footer" class="hover:text-red-500">Kontakt</a></li>
+      <li><a href="onama.html" class="hover:text-red-500">O nama</a></li>
+    </ul>
+    <div class="hidden md:flex space-x-4 text-3xl text-white">
+      <button onclick="kosarica()" class="text-3xl text-white">
+        <i class="ri-shopping-cart-line"></i>
+      </button>
+      <button onclick="login()"><i class="ri-user-line"></i></button>
+    </div>
+  </nav>
+
+
+  <!-- Header -->
+  <header id="home" class="flex flex-col md:flex-row  items-center text-center md:text-left p-8 md:p-16 bg-[#FFEBE1]">
+    <div class="md:w-1/2">
+      <h1 class="text-5xl font-extrabold text-[#FFB84D]">DOBRODOŠLI U NAŠ <span class="text-red-500">SVIJET</span>
+        HRANE</h1>
+      <p class="mt-4 text-gray-600 text-lg font-semibold">Uživajte u nezaboravnom putovanju okusa! Otkrijte
+        savršeno pripremljena jela, bogata aromama i teksturama, stvorena da vas oduševe u svakom zalogaju.</p>
+        <a href="meni.html">
+          <button class="mt-6 bg-[#FFB84D] text-white px-6 py-3 text-lg font-bold rounded-full hover:bg-[#FF8A65]">
+            Naruči
+          </button>
+        </a>        
+    </div>
+    <div class="md:w-1/2 mt-6 md:mt-0">
+      <img src="Burger-removebg-preview.png" alt="Hamburger" class="w-full max-w-md mx-auto">
+    </div>
+  </header>
+
+  <section id="popular-dishes" class="w-full px-[40px] bg-[#FFEBE1]">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Jelo 1 -->
+      <div
+        class="group bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl relative">
+        <img src="front-view-woman-eating-meat-burgers.jpg" alt="Jelo 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Hamburgeri</h3>
+          <p class="text-gray-600 mb-4">Opis jela 1. Neodoljiv spoj okusa!</p>
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold">Već od 5€</span>
+          </div>
+        </div>
+        <!-- Hover Text and Button -->
+        <div
+          class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-4 text-center">
+          <p>Neodoljiv spoj okusa! Otkrijte više o našim hamburgerima.</p>
+          <button class="bg-[#FFB84D] text-white px-4 py-2 rounded hover:bg-[#FF8A65] mt-4"><a href="meni.html#burgeri">Više</a></button>
+        </div>
+      </div>
+
+      <!-- Jelo 2 -->
+      <div
+        class="group bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl relative">
+        <img src="traditional-supreme-pizza-black-stone.jpg" alt="Jelo 2" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Pizze</h3>
+          <p class="text-gray-600 mb-4">Opis jela 2. Neodoljiv spoj okusa!</p>
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold">Novo u ponudi</span>
+          </div>
+        </div>
+        <!-- Hover Text and Button -->
+        <div
+          class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-4 text-center">
+          <p>Otkrijte najnovije pizze u ponudi, bogate okusima!</p>
+          <button class="bg-[#FFB84D] text-white px-4 py-2 rounded hover:bg-[#FF8A65] mt-4"><a href="meni.html#pizze">Više</a></button>
+        </div>
+      </div>
+
+      <!-- Jelo 3 -->
+      <div
+        class="group bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl relative">
+        <img src="beef-steak-served-with-french-fries-diced-gren-herbs-wooden-board.jpg" alt="Jelo 3"
+          class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Prilozi</h3>
+          <p class="text-gray-600 mb-4">Dodajte ono što volite!</p>
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold">Pomfrit, umaci...</span>
+          </div>
+        </div>
+        <!-- Hover Text and Button -->
+        <div
+          class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-4 text-center">
+          <p>Pomfrit, umaci i drugi prilozi koje volite!</p>
+          <button class="bg-[#FFB84D] text-white px-4 py-2 rounded hover:bg-[#FF8A65] mt-4"><a href="meni.html#prilozi">Više</a></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section
+    class="w-full bg-[#FFB84D] pt-20 mb-10 flex mt-60 flex-col sm:flex-col md:flex-row items-center justify-center text-center md:text-left px-4 sm:px-8 lg:px-16 gap-6">
+    <div class="md:w-1/2 mb-6 pl-28 md:mb-0">
+      <h2 class="text-4xl font-extrabold text-gray-800">Download the app</h2>
+      <p class="text-lg text-gray-700 mt-2">Click, sit back, and enjoy.</p>
+      <div class="flex justify-center md:justify-start space-x-4 mt-6">
+        <a href="https://www.apple.com/app-store/">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store"
+            class="h-12 sm:h-14">
+        </a>
+        <a href="https://play.google.com/store/games?device=windows">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            alt="Google Play" class="h-12 sm:h-14">
+        </a>
+      </div>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img src="mob-removebg-preview (1).png" alt="App Preview" class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-[#FFB84D] text-white py-12">
+
+    <div class="container mx-auto px-6 text-center relative">
+
+      <div class="relative mb-8">
+        <div
+          class="absolute inset-y-0 left-0 w-16 flex items-center justify-center text-6xl font-extrabold text-[#FFB84D]">
+          <h2 class="text-4xl font-extrabold text-white ml-20">The<span class="text-red-500">Glovo</span></h2>
+        </div>
+      </div>
+
+
+      <div class="mb-8">
+        <ul class="flex justify-center space-x-8">
+          <li><a href="#home" class="text-white hover:text-red-500 text-lg font-semibold">Home</a></li>
+          <li><a href="#contact" class="text-white hover:text-red-500 text-lg font-semibold">Kontakt</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="flex justify-center space-x-6">
+        <a href="https://www.facebook.com/" class="text-white text-3xl hover:text-red-500"><i class="ri-facebook-fill"></i></a>
+        <a href="https://x.com/" class="text-white text-3xl hover:text-red-500"><i class="ri-twitter-fill"></i></a>
+        <a href="https://www.instagram.com/" class="text-white text-3xl hover:text-red-500"><i class="ri-instagram-fill"></i></a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"></script>
+
+
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.getElementById("nav-links");
+    const menuBtnIcon = menuBtn.querySelector("i");
+    const menuContainer = document.getElementById("menu-container");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    const submenu = document.querySelectorAll("#menu-container > .group > ul");
+    let menuTimeout;
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("hidden");
+      menuBtnIcon.classList.toggle("ri-menu-3-line");
+      menuBtnIcon.classList.toggle("ri-close-line");
+    });
+
+    menuContainer.addEventListener("mouseenter", () => {
+      clearTimeout(menuTimeout);
+      dropdownMenu.classList.remove("hidden");
+    });
+
+
+    menuContainer.addEventListener("mouseenter", () => {
+      clearTimeout(menuTimeout);
+      dropdownMenu.classList.remove("hidden");
+    });
+
+    menuContainer.addEventListener("mouseleave", () => {
+      menuTimeout = setTimeout(() => {
+        dropdownMenu.classList.add("hidden");
+      }, 50);
+    });
+
+    submenu.forEach((menu) => {
+      menu.addEventListener("mouseenter", () => {
+        menu.querySelector("ul").classList.remove("hidden");
+      });
+      menu.addEventListener("mouseleave", () => {
+        menu.querySelector("ul").classList.add("hidden");
+      });
+    });
+
+    function login() {
+      window.location.href = "login.html";
+    }
+    function kosarica() {
+      window.location.href = "kosarica.html";
+    }
+    function meni() {
+      window.location.href = "meni.html";
+    }
+
+
+    document.querySelectorAll("#menu-container .group").forEach((menu) => {
+      menu.addEventListener("mouseenter", () => {
+        const submenu = menu.querySelector("ul");
+        if (submenu) submenu.classList.remove("hidden");
+      });
+      menu.addEventListener("mouseleave", () => {
+        const submenu = menu.querySelector("ul");
+        if (submenu) submenu.classList.add("hidden");
+      });
+    });
+
+
+  </script>
+
+
+</body>
+
+</html>

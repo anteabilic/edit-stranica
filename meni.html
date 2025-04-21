@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        baloo: ['"Baloo 2"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#FFFBF1] text-gray-800 font-baloo">
+    <nav class="bg-[#FFB84D] p-4 flex justify-between items-center">
+        <a href="index.html" class="text-3xl font-bold text-white">The<span class="text-red-500">Glovo</span></a>
+        <button id="menu-btn" class="text-3xl md:hidden text-white"><i class="ri-menu-3-line"></i></button>
+        <ul id="nav-links" class="hidden md:flex space-x-6 text-white font-bold">
+            <li><a href="index.html#home" class="hover:text-red-500">Home</a></li>
+            <li class="relative group z-50" id="menu-container">
+                <a href="#meni" class="hover:text-red-500">Meni</a>
+                <ul id="dropdown-menu"
+                    class="absolute left-0 hidden bg-[#FFB84D] text-white rounded-md mt-2 w-60 p-2 space-y-2">
+                    <li><a href="#burgeri" class="block px-4 py-2 hover:bg-[#FF8A65] rounded">Burgeri</a></li>
+                    <li><a href="#pizze" class="block px-4 py-2 hover:bg-[#FF8A65] rounded">Pizze</a></li>
+                    <li><a href="#preporucena" class="block px-4 py-2 hover:bg-[#FF8A65] rounded">Preporučeno</a></li>
+                    <li><a href="#prilozi" class="block px-4 py-2 hover:bg-[#FF8A65] rounded">Prilozi</a></li>
+                    <li><a href="#deserti" class="block px-4 py-2 hover:bg-[#FF8A65] rounded">Deserti</a></li>
+                    <li><a href="#pica" class="block px-4 py-2 hover:bg-[#FF8A65] rounded">Pića</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        </ul>
+        <div class="hidden md:flex space-x-4 text-3xl text-white">
+            <button onclick="kosarica()" class="text-3xl text-white">
+                <i class="ri-shopping-cart-line"></i>
+                <span id="brojStavki">0</span> <!-- Broj stavki -->
+            </button>
+        </div>
+    </nav>
+
+    <h1 id="burgeri" class="text-4xl font-bold text-red-500 mx-20 mt-10">Burgeri</h1>
+    <section class="w-full px-[40px] content mb-20 mt-10">
+        <div id="burger-kartice" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <h1 id="pizze" class="text-4xl font-bold text-red-500 mx-20 mt-10">Pizze</h1>
+    <section class="w-full px-[40px] content mb-20 mt-10">
+        <div id="pizza-kartice" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <h1 id="preporucena" class="text-4xl font-bold text-red-500 mx-20 mt-10">Preporučena jela</h1>
+    <section class="w-full px-[40px] content mb-20 mt-10">
+        <div id="preporucena-kartice" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+    </section>
+
+
+    <h1 id="prilozi" class="text-4xl font-bold text-red-500 mx-20 mt-10">Prilozi</h1>
+    <section class="w-full px-[40px] content mb-20 mt-10">
+        <div id="prilozi-kartice" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <h1 id="deserti" class="text-4xl font-bold text-red-500 mx-20 mt-10">Deserti</h1>
+    <section class="w-full px-[40px] content mb-20 mt-10">
+        <div id="deserti-kartice" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+    </section>
+
+
+    <h1 id="pica" class="text-4xl font-bold text-red-500 mx-20 mt-10">Pića</h1>
+    <section class="w-full px-[40px] content mb-20 mt-10">
+        <div id="pica-kartice" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#FFB84D] text-white py-12 mt-auto">
+        <div class="container mx-auto px-6 text-center relative">
+            <div class="relative mb-8">
+                <div
+                    class="absolute inset-y-0 left-0 w-16 flex items-center justify-center text-6xl font-extrabold text-[#FFB84D]">
+                    <h2 class="text-4xl font-extrabold text-white ml-20">The<span class="text-red-500">Glovo</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-white text-3xl hover:text-red-500"><i class="ri-facebook-fill"></i></a>
+                <a href="#" class="text-white text-3xl hover:text-red-500"><i class="ri-twitter-fill"></i></a>
+                <a href="#" class="text-white text-3xl hover:text-red-500"><i class="ri-instagram-fill"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        class Jelo {
+            constructor(naziv, opis, cijena, slika, onClickIme) {
+                this.naziv = naziv;
+                this.opis = opis;
+                this.cijena = cijena;
+                this.slika = slika;
+                this.onClickIme = onClickIme;
+            }
+
+            generirajHTML() {
+                return `
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden relative transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+        <img src="${this.slika}" alt="${this.naziv}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">${this.naziv}</h3>
+          <p class="text-gray-600 mb-4">${this.opis}</p>
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold">${this.cijena.toFixed(2)}€</span>
+            <button onclick="dodajUKosaricu('${this.onClickIme}', ${this.cijena})" class="text-2xl text-green-500">
+              <i class="ri-add-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>`;
+            }
+        }
+
+        const burgeri = [
+            new Jelo("Burger s piletinom", "osvaja ukusnim paniranim kosanim odreskom od pilećih prsa, svježom i hrskavom salatom i sočnim umakom u finom pecivu.", 5.50, "front-view-fried-chicken-burger.jpg", "Hamburger piletina"),
+            new Jelo("Hamburger classic", "Sočan sendvič s kosanim goveđim odreskom u mekanom pecivu, uz kečap, blagi senfni umak, sjeckani luk i kisele krastavce.", 5.50, "artistic-photo-tasty-burger.jpg", "Hamburger classic"),
+            new Jelo("Hamburger sa slaninom", "100% goveđi kosani odrezak sa sirom, slaninom, svježom rajčicom, lukom, zelenom salatom i umakom u finom pecivu.", 5.50, "high-angle-burger-with-fries-table.jpg", "Hamburger sa slaninom"),
+            new Jelo("Dupli burger", "Dva sloja kosanog goveđeg mesa, sir, kiseli krastavci i bogati umaci u mekanom pecivu.", 6.50, "ai-generated-8276129_1280.jpg", "Dupli hamburger"),
+            new Jelo("Cheeseburger", "Klasični burger s topljenim sirom, blagim umakom, lukom i kiselim krastavcima u prozračnom pecivu.", 5.00, "hamburger-7191902_1280.jpg", "Cheeseburger"),
+            new Jelo("Ljuti piletina burger", "Hrskavi pileći odrezak s pikantnim umakom, salatom i svježim dodatcima u mekanom pecivu.", 5.80, "burger-7165152_1280.jpg", "Ljuti piletina burger")
+        ];
+
+        const pizze = [
+            new Jelo("Miješana", "Šunka, kulen, gljive, masline i sir na sočnom tijestu s umakom od rajčice.", 7.00, "img-pizza1-1200-1200-p-L-97.jpg", "Miješana"),
+            new Jelo("Margarita", "Klasična pizza s umakom od rajčice, mozzarellom i bosiljkom.", 6.00, "pizza-3000274_1280.jpg", "Margarita"),
+            new Jelo("Pizza Tuna", "Tuna, crveni luk i masline na rajčici i siru — savršen morski okus.", 7.50, "tuna.jpg", "Pizza Tuna"),
+            new Jelo("Seljačka", "Kulen, panceta, jaje i paprika na rustikalnom tijestu sa sirom.", 8.00, "seljacka.jpg", "Pizze"),
+            new Jelo("Capricciosa", "Šunka, gljive, artičoke i crne masline na bogatom sloju sira.", 7.20, "capricciosa.webp", "Capricciosa"),
+            new Jelo("BBQ piletina", "Piletina u BBQ umaku, crveni luk i mozzarella na dimljenom tijestu.", 7.80, "bbq-pizza.webp", "BBQ Piletina Pizza")
+        ];
+
+        const preporucena = [
+            new Jelo("Tortilja s piletinom", "Zapečena tortilja punjena piletinom, povrćem i umacima.", 6.50, "tortilja.webp", "Tortilja"),
+            new Jelo("Kebab", "Sočno meso s roštilja u lepinji s povrćem i umakom po izboru.", 7.00, "kebab.jpg", "Kebab"),
+            new Jelo("Wrap s tunom", "Lagani wrap s tunom, svježom salatom i jogurt dresingom.", 6.00, "wrap-tuna.jpg", "Wrap"),
+            new Jelo("Burrito", "Meksički burrito s mljevenim mesom, grahom i sirom.", 7.50, "burito.jpg", "Burrito"),
+            new Jelo("Quesadilla", "Hrskava tortilja s topljenim sirom, piletinom i umacima.", 6.80, "quesadilla.jpg", "Quesadilla")
+        ];
+
+        const prilozi = [
+            new Jelo("Pomfrit", "Hrskavi zlatni krumpirići, idealni uz svaki obrok.", 2.50, "french-fries-6208782_1280.jpg", "Pomfrit"),
+            new Jelo("Miješana salata", "Svježa salata od rajčice, krastavaca, zelene salate i kukuruza.", 3.00, "salad.jpg", "Miješana salata"),
+            new Jelo("Kečap", "Porcija slatkog rajčičastog kečapa, savršen za pomfrit ili burger.", 0.50, "ketchup.jpg", "Kečap"),
+            new Jelo("Majoneza", "Kremasti dodatak idealan uz pržene i pečene obroke.", 0.50, "majoneza.jpg", "Majoneza"),
+            new Jelo("Kiseli krastavci", "Hrskavi i osvježavajući kiseli krastavci.", 1.00, "pickles.avif", "Kiseli krastavci"),
+            new Jelo("Sirni umak", "Topli sirni umak za umakanje – kremasto zadovoljstvo.", 1.20, "umak.jpeg", "Sirni umak")
+        ];
+
+        const deserti = [
+            new Jelo("Lava kolač", "Topli čokoladni kolač s tekućom sredinom, savršen za ljubitelje tamne čokolade.", 4.00, "lava-cake.jpeg", "Lava kolač"),
+            new Jelo("Jagoda cheesecake", "Kremasti cheesecake s preljevom od svježih jagoda na hrskavoj podlozi.", 4.50, "jagoda.jpg", "cheesecake jagoda"),
+            new Jelo("Tiramisu", "Klasični talijanski desert sa slojevima kave, mascarpone kreme i kakaa.", 4.50, "tiramisu.jpg", "tiramisu"),
+            new Jelo("Palačinke s Nutellom", "Domaće palačinke punjene Nutellom, poslužene s dodatkom šlaga.", 3.80, "palacinke.jpg", "palačinke s nutellom"),
+            new Jelo("Sladoled 3 kugle", "Vanilija, čokolada i jagoda — klasična kombinacija omiljenih okusa.", 3.50, "sladoled.jpg", "sladoled"),
+            new Jelo("Pita od jabuka", "Domaća pita s komadićima jabuka, lagano začinjena cimetom, poslužena topla.", 4.20, "apple-pie.jpg", "pita od jabuka")
+        ];
+
+
+        const pica = [
+            new Jelo("Coca-Cola", "Klasično bezalkoholno piće koje se savršeno slaže uz svaki obrok.", 2.00, "cola.jpg", "Coca-Cola"),
+            new Jelo("Fanta", "Osvježavajuće gazirano piće s okusom naranče.", 2.00, "fanta.png", "Fanta"),
+            new Jelo("Mineralna voda", "Prirodna gazirana mineralna voda.", 1.50, "mineralna.jpg", "Mineralna voda"),
+            new Jelo("Voda (negazirana)", "Boca negazirane prirodne vode.", 1.30, "voda.jpg", "Voda"),
+            new Jelo("Sok od naranče", "Prirodni sok od naranče, poslužen hladan.", 2.20, "orange-juice.jpg", "Sok od naranče"),
+            new Jelo("Ice Tea breskva", "Ledeni čaj s okusom breskve – lagano i osvježavajuće.", 2.00, "ice-tea.jpg", "Ice Tea breskva")
+        ];
+
+
+
+        // Generiranje HTML-a i dodavanje u DOM
+        document.getElementById("burger-kartice").innerHTML = burgeri.map(j => j.generirajHTML()).join("");
+        document.getElementById("pizza-kartice").innerHTML = pizze.map(j => j.generirajHTML()).join("");
+        document.getElementById("preporucena-kartice").innerHTML = preporucena.map(j => j.generirajHTML()).join("");
+        document.getElementById("prilozi-kartice").innerHTML = prilozi.map(j => j.generirajHTML()).join("");
+        document.getElementById("deserti-kartice").innerHTML = deserti.map(j => j.generirajHTML()).join("");
+        document.getElementById("pica-kartice").innerHTML = pica.map(j => j.generirajHTML()).join("");
+
+        function dodajUKosaricu(naziv, cijena) {
+            console.log(`Dodano: ${naziv}, cijena: ${cijena}€`);
+        }
+    </script>
+    <script>
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Malo pomakni 
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        // Funkcija za dodavanje u košaricu
+        function dodajUKosaricu(jelo, cijena) {
+            let kosarica = JSON.parse(localStorage.getItem('kosarica')) || [];
+
+            // Provjera 
+            let postoji = kosarica.find(item => item.naziv === jelo);
+
+            if (postoji) {
+                // Ako jelo već postoji povećaj broj
+                postoji.kolicina += 1;
+            } else {
+                // Ako jelo ne postoji dodaj novo
+                kosarica.push({ naziv: jelo, cijena: cijena, kolicina: 1 });
+            }
+
+            // Spremi u localStorage
+            localStorage.setItem('kosarica', JSON.stringify(kosarica));
+
+            // Ažuriraj
+            updateBrojStavki();
+        }
+
+        // Funkcija za ažuriranje broja košarici
+        function updateBrojStavki() {
+            let kosarica = JSON.parse(localStorage.getItem('kosarica')) || [];
+            let brojStavki = kosarica.reduce((acc, item) => acc + item.kolicina, 0);
+            document.getElementById('brojStavki').textContent = brojStavki;
+        }
+
+        // prikazivanje sadržaja košarice
+        function kosarica() {
+            window.location.href = "kosarica.html";  // Zamijeni s stvarnom stranicom košarice
+        }
+
+        //funkcija da odma prikaže broj stavki kad se stranica ucita 
+        document.addEventListener('DOMContentLoaded', function () {
+            updateBrojStavki();  // Ažurira
+        });
+    </script>
+    <script>
+        // Navigacija
+        const menuBtn = document.getElementById("menu-btn");
+        const navLinks = document.getElementById("nav-links");
+        const menuBtnIcon = menuBtn.querySelector("i");
+        const menuContainer = document.getElementById("menu-container");
+        const dropdownMenu = document.getElementById("dropdown-menu");
+
+        let menuTimeout;
+
+        // Funkcija za toggle meni
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("hidden");
+            menuBtnIcon.classList.toggle("ri-menu-3-line");
+            menuBtnIcon.classList.toggle("ri-close-line");
+        });
+
+        // Otvaranje dropdown menija na hover
+        menuContainer.addEventListener("mouseenter", () => {
+            clearTimeout(menuTimeout);
+            dropdownMenu.classList.remove("hidden");
+        });
+
+        // Zatvaranje dropdown menija na izlaz iz menija
+        menuContainer.addEventListener("mouseleave", () => {
+            menuTimeout = setTimeout(() => {
+                dropdownMenu.classList.add("hidden");
+            }, 50);
+        });
+    </script>
+
+</body>
+
+</html>
